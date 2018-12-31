@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css" /> -->
+    <!-- <script src="main.js"></script> -->
+</head>
+<body>
+    <p>Hello</p>
+   <?php
+    $x = 5; // global scope
+
+    function myTest()
+    {
+    // using x inside this function will generate an error
+        echo "<p>Variable x inside function is: $x</p>";
+    }
+    myTest(); 
+
+    echo "<p>Variable x outside function is: $x</p>";
+    ?>
+    <!-- <?php 
+    $cars = array("Volvo", "BMW", "Toyota");
+    var_dump($cars);
+    ?> -->
+   
+    
+</body>
+</html>
