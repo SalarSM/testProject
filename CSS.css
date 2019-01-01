@@ -1,5 +1,12 @@
 *{
     margin: center;
     font-size: 20 px;
-    
+    background-color: blueviolet;
+}
+#welcome {
+    font-size: 23px;
+    font-stretch: condensed;
+    color: aliceblue;
+    padding: center;
+    margin: 0 auto 0;
 }
