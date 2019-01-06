@@ -22,14 +22,173 @@
     </div>
     <div>
         <p>
-           <?php
+           <!-- <?php
                 $text = "Salar";
                 echo("$text");
                 echo("<br>");
                 echo $text;
-           ?>
+           ?> -->
         </p>
     </div>
+    <div>
+<!-- <script>
+    console.log("string line1 \n" + "string line2");
+    "</br>"
+    console.log(`string line1 
+    string line2`);
+
+    var a= 4 , b=10;
+    console.log(`fourteen is ${a+b} and isnot ${2*a+b} `);
+
+    function tag(strings , ...values){
+        console.log(strings[0]);
+        console.log(strings[1]);
+        console.log(values[0]);
+        console.log(values[1]);
+        console.log('Done Operation.');
+    }
+    tag `Hello ${a+b}Salar ${a*b}`
+
+    class Point {
+        constructor(x , y) {
+            this.x = x;
+            this.y = y;
+            console.log(`point: (${this.x},${this.y})`);
+        }
+
+        get point() {
+            return `point: (${this.x},${this.y})`;
+        }
+
+        set pointSetter(value) {
+            this.x = value[0]; 
+            this.y = value[1];            
+       }
+    }
+    var point1 = new Point(5,8);
+    console.log(point1.pointSetter=[10,5]);
+    console.log(point1.point);
+</script> -->
+    <!-- <script>
+
+        class Point {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            toString() {
+                return `${this.x},${this.y}`;
+            }
+        }
+
+        class colorPoint extends Point{
+            constructor(x, y, color) {
+                super(x, y);
+                this.color = color;
+            }
+            toString() {
+                return `${super.toString()} ${this.color}`;
+            }
+        }
+
+        let po = new Point(20,30);
+        console.log(po.toString());
+        let cp = new colorPoint(10, 20, 'red');
+        console.log(cp.toString());
+        
+    </script> -->
+<!-- 
+   <script>
+       let sum = (a, b) => a+b ;
+       console.log(sum(5, 4));
+
+       var names = ["Salar", "Reza", "Hadi"];
+       var names1 = names.map(n => n.length);
+       console.log(names1);
+
+       var numbers=[1,2,3,4];
+       var sum2 = 0;
+       numbers.forEach(function(n) {
+            sum2 += n;
+       });
+       console.log(sum2);
+   </script> -->
+
+   <!-- <script>
+       //to create random numbers 0<x<20 using generators
+       function* random() {
+
+          
+             yield Math.floor(Math.random() * 20) + 1;
+
+            
+       }
+       console.log(random().next().value); 
+   </script>
+    </div>
+
+    <div id="div1">
+
+        <div id="div2">
+
+        </div>
+        <div id="div3">
+            
+        </div>
+    </div> -->
+
+    <!-- <script>
+        let person = {
+            name:"Salar",
+            family: "ESM",
+            age : function () {
+                let year = new Date().getFullYear();
+                return ((year) -1990);
+            }
+        }
+        Reflect.set(person, "job", "CEO");
+        console.log(Reflect.get(person, "age"));
+        console.log(person);
+
+        let set = new Set([1,2,3,4,5]);
+        for (let i of set){
+            console.log(i);
+        }
+        set.add(6);
+        set.add(7);
+        console.log("after add 7 the size is\n"+ set.size);
+        
+            for (let i of set) {
+                console.log(i);
+            }
+        let setIterator = set.entries;
+        
+        console.log(setIterator.next());//??
+        
+    </script> -->
+
+    <script>
+        class MakeIterator {
+            constructor(arr){
+                this.arr = arr;
+            }
+            [Symbol.iterator]() {
+                let nextIndex = 0;
+                // let self = this;
+                return {
+                    next: () =>{
+                       return (nextIndex<this.arr.length ? {value:this.arr[nextIndex++], done:false}: { done: true}); 
+                    }
+                }
+            }
+        }
+
+
+        let arr = new MakeIterator(['a','b','c']);
+        for(let a of arr) {
+            console.log(a);
+        }
+    </script>
     
 </body>
 </html>
