@@ -176,6 +176,7 @@
                 let nextIndex = 0;
                 // let self = this;
                 return {
+                    //in arrow function in normal mode, this keyword refferd to global not local
                     next: () =>{
                        return (nextIndex<this.arr.length ? {value:this.arr[nextIndex++], done:false}: { done: true}); 
                     }
