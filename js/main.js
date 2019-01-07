@@ -4,17 +4,17 @@ let person = {
     pro: () => {
         doing();
     },
-    age: () => {
+    age: (n) => {
         let y = new Date().getFullYear();
-        return ( y - 1990);  
+        return ( y - n);  
     }
 }
 function doing() {
     console.log("I'm coding!");
 }
 
-console.log(person.age());
-person.pro();
+// console.log(person.age());
+// person.pro();
 /////////proxy example:
 
 let proxyPerson = new Proxy(person, {
@@ -33,8 +33,37 @@ let proxyPerson = new Proxy(person, {
     }
 });
 
-console.log(proxyPerson.age);
-proxyPerson.family = "Mehr";
-console.log(proxyPerson.family);
-proxyPerson.name = "Nima";
-console.log(proxyPerson.name);
+// console.log(proxyPerson.age);
+// proxyPerson.family = "Mehr";
+// console.log(proxyPerson.family);
+// proxyPerson.name = "Nima";
+// console.log(proxyPerson.name);
+
+// function createNewPerson(name) {
+//     var obj = {};
+//     obj.name =  name;
+//     obj.greeting = function () {
+//         alert('Hi! I\'m ' + obj.name + '.');
+//     };
+//     return obj;
+// }
+// console.log(createNewPerson("ali").name);
+// var salar = createNewPerson("Salar");
+// salar.greeting();
+
+person.age = new Proxy(person.age, {
+    apply(target, context, args) {
+        if (context !== person) {
+            return (console.log("nobody can use person!"));
+        } else
+            return target.apply(context, args);
+    }    
+});
+
+let person2 = {
+    name: "Hamid"
+};
+person2.age = person.age;
+console.log(person.age(1990));;
+person2.age(2000);
+console.log(person2.age);
