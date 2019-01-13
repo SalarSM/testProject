@@ -33,23 +33,23 @@ let proxyPerson = new Proxy(person, {
     }
 });
 
-// console.log(proxyPerson.age);
-// proxyPerson.family = "Mehr";
-// console.log(proxyPerson.family);
-// proxyPerson.name = "Nima";
-// console.log(proxyPerson.name);
+console.log(proxyPerson.age);
+proxyPerson.family = "Mehr";
+console.log(proxyPerson.family);
+proxyPerson.name = "Nima";
+console.log(proxyPerson.name);
 
-// function createNewPerson(name) {
-//     var obj = {};
-//     obj.name =  name;
-//     obj.greeting = function () {
-//         alert('Hi! I\'m ' + obj.name + '.');
-//     };
-//     return obj;
-// }
-// console.log(createNewPerson("ali").name);
-// var salar = createNewPerson("Salar");
-// salar.greeting();
+function createNewPerson(name) {
+    var obj = {};
+    obj.name =  name;
+    obj.greeting = function () {
+        alert('Hi! I\'m ' + obj.name + '.');
+    };
+    return obj;
+}
+console.log(createNewPerson("ali").name);
+var salar = createNewPerson("Salar");
+salar.greeting();
 
 person.age = new Proxy(person.age, {
     apply(target, context, args) {

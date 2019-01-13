@@ -1,0 +1,13 @@
+{
+  "name": "minify-test",
+  "version": "1.0.0",
+  "description": "test for npm- minify ",
+  "main": "comperesoor.js",
+  "scripts": {
+    "build": "node-minify --compressor uglify-js --input 'js/main.js' --output 'main.min.js'"
+  },
+  "dependencies": {
+    "clean-css": "^4.2.1",
+    "node-minify": "^3.6.0"
+  }
+}
